@@ -39,7 +39,7 @@ public class UserService implements UserDetailsService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
-
+    @Transactional
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
